@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p> Nam va the ky </p>
+a <input type="number" id="cva" name="cva"> <br>
+<button onclick="ketq()">Ket qua</button>
+<p id="kqua">kq</p>
+<script>
+    function ketq() {
+        let a = +document.getElementById('cva').value;
+        let kqua = Math.ceil(a/100);
+        document.getElementById('kqua').innerHTML = 'nam: ' +a + 'la ket ky ' + kqua;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhap vao chieu dai canh thu nhat");
+    let b = +prompt("Nhap vao chieu dai canh thu hai");
+    let c = +prompt("Nhap vao chieu dai canh thu ba");
+    let flag = false
+    if(a+b>c && b+c>a && a+c>b) {
+        flag = true
+    }
+    if (flag) {
+        if(a === b || a === c || b ===c) {
+            document.write("Tam giac can")
+        } else if (a ===b && b === c) {
+            document.write("Tam giac deu")
+        } else if (a**2 === b**2 + c**2 || b**2 === a**2 + c**2 || c**2 === b**2 + a**2 ) {
+            document.write("Tam giac vuong")
+        }
+    } else {
+        document.write("Khong phai la mot tam giac")
+    }
+</script>
+</body>
+</html>

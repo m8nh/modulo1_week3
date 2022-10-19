@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhap so phan tu cua mang");
+    let myArr = [];
+    for (let i = 0; i < n; ++i) {
+        myArr[i] = +prompt(`Nhap vao phan tu thu ${i + 1}`)
+    }
+    console.log(myArr)
+
+    // 3
+    document.write(`<strong>In ra phần tử:</strong> <br>`);
+    for (let i = 0; i < n; ++i) {
+        document.write(`Phần tử thứ ${i+1}: ${myArr[i]} <br>`)
+    }
+
+    // 4
+    let sumArr = myArr.reduce((prev,cur) => {
+        prev += cur;
+        return prev
+    },0);
+    document.write(`<strong>Tổng các phần tử:</strong> ${sumArr} <br>`);
+
+    // 5
+    let sum1 = 0;
+    for (let item of myArr) {
+        if(item % 5 === 2) {
+            sum1 += item
+        }
+    }
+    document.write(`<strong>Tổng các phần tử chia 5 dư 2:</strong> ${sum1} <br>`);
+
+    // 6
+    let count1 = 0;
+    for (let item of myArr) {
+        if(item % 6 === 0) {
+            count1 += 1
+        }
+    }
+    document.write(`<strong>Số phần tử chia hết cho 6:</strong> ${count1} <br>`);
+
+    // 7
+    let count2 = 0;
+    let sum2 = 0
+    for (let item of myArr) {
+        if (item > 10 && item % 4 === 3){
+            count2 += 1;
+            sum2 += item
+        }
+    }
+    if(count2 !== 0) {
+        document.write(`<strong>TBC của các phần tử lớn hơn 10 và chia 4 dư 3:</strong> ${sum2 / count2} <br>`);
+    } else {
+        document.write(`<strong>TBC của các phần tử lớn hơn 10 và chia 4 dư 3:</strong> Không có phần tử nào thỏa mãn điều kiện<br>`);
+    }
+
+    // 8
+    let max = myArr[0];
+    for (let item of myArr){
+        if(max < item){
+            max = item
+        }
+    }
+    document.write(`<strong>MAX của mảng:</strong> ${max} <br>`);
+
+    // 9
+    let maxOdd = -1;
+    for (let i = 0; i < myArr.length; ++i){
+        if(myArr[i] % 2 !== 0){
+            maxOdd = i;
+            break;
+        }
+    }
+    for (let j = maxOdd; j < myArr.length; ++j) {
+        if (myArr[maxOdd] < myArr[j]) {
+            myArr[maxOdd] = myArr[j]
+        }
+    }
+    if (maxOdd !== -1) {
+        document.write(`<strong>MAX của các số lẻ trong mảng:</strong> ${myArr[maxOdd]} <br>`);
+    } else {
+        document.write(`<strong>MAX của các số lẻ trong mảng:</strong> Trong mảng không có số lẻ <br>`)
+    }
+
+    // 10
+    let x = +prompt("Nhập x");
+    if (myArr.indexOf(x) !== -1) {
+        document.write(`<strong>Vị trí của ${x} trong mảng:</strong> myArr.indexOf(x)`)
+    } else {
+        document.write(`<strong>Vị trí của ${x} trong mảng:</strong> Trong mảng không tồn tại ${x}`)
+    }
+
+</script>
+</body>
+</html>

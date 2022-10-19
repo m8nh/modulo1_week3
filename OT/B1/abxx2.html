@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p> Diwn tinh </p>
+a <input type="number" id="cva" name="cva"> <br>
+b <input type="number" id="cvb" name="cvb" > <br>
+<button onclick="ketq()">Ket qua</button>
+<p id="kqua">kq</p>
+<p id="kqua1">kq</p>
+
+<script>
+    function ketq() {
+        let a = +document.getElementById('cva').value;
+        let b = +document.getElementById('cvb').value;
+        let kqua = a**2
+        let kqua1 = b**2 ;
+        document.getElementById('kqua').innerHTML = 'Ket qua la: ' + kqua ;
+        document.getElementById('kqua1').innerHTML = 'Ket qua la: ' + kqua1;
+        }
+</script>
+</body>
+</html>

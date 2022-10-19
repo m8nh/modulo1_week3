@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p> Chu Vi </p>
+    a <input type="number" id="cva" name="cva"> <br>
+    <button onclick="ketq()">Ket qua</button>
+    <p id="kqua">kq</p>
+<script>
+    function ketq() {
+        let a = +document.getElementById('cva').value;
+        let kqua = 4 * a;
+        document.getElementById('kqua').innerHTML = 'Chu vi la: ' + kqua;
+    }
+
+</script>
+
+
+</body>
+</html>
