@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+a <input type="number" id="a"  name="a">
+<br>
+b <input type="number" id="b" name="a">
+<br>
+<button onclick="reSult()"> KQ</button>
+<p id="result">HT KQ</p>
+<script>
+    function reSult() {
+        let a = +document.getElementById('a').value;
+        let b = +document.getElementById('b').value;
+        if (a>b){
+            document.getElementById('result').innerHTML= a + '>' + b;
+        }
+        else{
+            let tong = a + b;
+            document.getElementById('result').innerHTML= 'total a + b = ' + tong
+        }
+    }
+</script>
+</body>
+</html>
