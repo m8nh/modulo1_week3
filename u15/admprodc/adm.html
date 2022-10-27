@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <p>Add product</p>
+    <input type="text" id="add">
+    <button onclick="addProduct()">Add</button>
+    <p>Display all product</p>
+</div>
+
+<table id="displayArea" border="1">
+</table>
+<div id="edit"></div>
+<script>
+    let listProduct = ['Ip12', 'Note 10', 'Ip13 xx Max', 'Nokia 1280'];
+    displayAll();
+    function displayAll() {
+        // let str = `<table border="1px solid black">' + '<tr>' +
+        // '<td> Product Name</td>' +
+        // '<td> </td>' +
+        // '<td>' + listProduct.length + ' </td>' +
+        // ' </tr>' + '</table>`;
+    // for (let i = 0; i < listProduct.length; i++) {
+    //     str += '<tr><td>'+ listProduct[i] +'</td>' +
+    //         '<td><button onclick="showFormEdit(` ${i} `)">Edit</button></td>'+
+    //         '<td><button onclick="deleteProduct(` ${i} `)">Delete</button></td></tr>'
+    //     }
+    // document.getElementById("displayArea").innerText = str;
+        let str = '<table border="1px solid red">'
+        str += '<tr>'
+        str+= '<td>' + 'STT' + '</td>'
+        str+= '<td>' + 'Name' + '</td>'
+        for (let i = 0; i < listProduct.length; i++) {
+            str += '<tr>'
+            str += '<td>' + (i + 1) + '</td>'
+            str += '<td>' + listProduct[i] + '</td>' +  '<td><button onclick="showFormEdit('+i+')">Edit</button></td>'+
+                '<td><button onclick="deleteProduct('+i+')">Delete</button></td></tr>';
+        }
+        str += '</tr>'
+        str += '</table>'
+        document.getElementById('displayArea').innerHTML  =str
+    }
+displayAll()
+
+    function addProduct() {
+        let productName =  document.getElementById('add').value;
+        document.getElementById('add').value = ''
+        listProduct.push(productName);
+        // console.log(listProduct);
+        displayAll();
+    }
+    function deleteProduct(inDex) {
+        listProduct.splice(inDex, 1);
+        displayAll();
+    }
+    function showFormEdit(inDex) {
+        let str = '';
+        str =`<input type="text" id="editProduct" value='${listProduct[inDex]}'><button onclick="saveProduct(${inDex})">Save</button>`;
+        document.getElementById('edit').innerHTML = str;
+
+    }
+    function saveProduct(inDex) {
+        listProduct[inDex] = document.getElementById('editProduct').value;
+        document.getElementById('edit').innerHTML = '';
+        displayAll();
+    }
+
+</script>
+</body>
+</html>
